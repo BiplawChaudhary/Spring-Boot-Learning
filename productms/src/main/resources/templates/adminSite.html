@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th ="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Admin Site</title>
+
+    <style>
+        body{
+        display:flex;
+        justify-content:center;
+        flex-direction:column;
+        align-items:center;
+        height:100vh;
+        margin:0 12em;
+        }
+
+        th, tr, td{
+        border:2px solid black;
+        padding:1em;
+        }
+    </style>
+</head>
+<body>
+  <h1>Admin Site</h1>
+
+  <a th:href="@{/admin/new-item}"><button>Add New Product</button></a>
+
+    <h3>Products List</h3>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Desc</th>
+                <th>Price</th>
+                <th>Quantity</th>
+                <th>Category</th>
+                <th>Actions</th>
+
+            </tr>
+        </thead>
+
+        <tbody>
+            <tr th:each="item : ${items}">
+                <td th:text="${item.name}"></td>
+                <td th:text="${item.desc}"></td>
+                <td th:text="${item.price}"></td>
+                <td th:text="${item.quantity}"></td>
+                <td th:text="${item.category}"></td>
+                <td>
+                    <a th:href="@{/admin/edit/{id} (id =${item.id})}"><button>Edit</button></a>
+                    <a th:href="@{/admin/delete/{id} (id =${item.id})}"><button>Delete</button></a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+</body>
+</html>

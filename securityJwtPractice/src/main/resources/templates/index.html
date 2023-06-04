@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymeleaf.org">
+<head>
+<!--    <meta charset="UTF-8">-->
+    <title>HomePage</title>
+</head>
+<body>
+  <h1>THis is the homepage.</h1>
+  <p>Added new line</p>
+
+  <a th:href="@{/login-form}"><button>Login In</button></a>
+
+  <p th:text="${token}"></p>
+
+</body>
+</html>

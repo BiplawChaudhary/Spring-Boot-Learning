@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Create Student</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+  <div class="container">
+      <div class="row">
+        <div class="col-lg-6 col-md-6 col-sm-6 container justify-content-center card">
+          <h1 class="text-center">Create a new Student</h1>
+
+          <div class="card-body">
+<!--            We'll use thymeleaf attibute to define the action-->
+<!--            th:object is used to access the empty object that we've specified in the controller-->
+<!--            the student object we've provided in the model -->
+            <form th:action="@{/students}" th:object = "${student}" method="post">
+              <div class="form-group">
+                <label >First Name</label>
+<!--                th:field is used to bind the form input to the post name-->
+<!--                the postname field should be same as in entity-->
+                <input type="text" name="firstName" th:field="*{firstName}", placeholder="Enter student's name." class="form-control">
+
+                <label >Last Name</label>
+                <!--                th:field is used to bind the form input to the post name-->
+                <!--                the postname field should be same as in entity-->
+                <input type="text" name="lastName" th:field="*{lastName}", placeholder="Enter student's last name." class="form-control">
+
+                <label >Email: </label>
+                <!--                th:field is used to bind the form input to the post name-->
+                <!--                the postname field should be same as in entity-->
+                <input type="email" name="email" th:field="*{email}", placeholder="Enter student's email." class="form-control">
+
+                <div class="box-footer">
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </div>
+              </div>
+
+            </form>
+          </div>
+        </div>
+      </div>
+  </div>
+
+</body>
+</html>

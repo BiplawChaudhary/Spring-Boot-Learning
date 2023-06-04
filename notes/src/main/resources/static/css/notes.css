@@ -1,0 +1,121 @@
+@import url('https://fonts.googleapis.com/css2?family=Courgette&family=Nunito+Sans&family=Poppins&display=swap');
+
+
+:root{
+     --HEADING_FONT:'Courgette', cursive;
+    --BODY_FONT: 'Nunito Sans', sans-serif;
+
+    --HEADER_FONT:'Poppins', sans-serif;
+    /* https://coolors.co/palette/006d77-83c5be-edf6f9-ffddd2-e29578 */
+    --COLOR1: #69359C;
+    --COLOR2: #B65FcF;
+    --COLOR3: #EDF6F9;
+    --COLOR4: #FFDDD2;
+    --COLOR5: #E29578;
+}
+
+*{
+    margin:0;
+    padding: 0;
+    box-sizing: border-box;
+}
+h1, h2, h3, h4, h5, h6{
+    font-family: var(--HEADING_FONT);
+}
+body{
+    font-family: var(--BODY_FONT);
+    text-align: justify;
+    padding:2em;
+
+}
+
+label{
+    font-family: var(--BODY_FONT);
+}
+
+header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom:2em;
+
+}
+header li{
+    display: inline;
+    margin:0 2em;
+}
+header li a{
+    text-decoration: none;
+    color: black;
+    /* background-color: var(--COLOR1); */
+}
+header li a:hover{
+    color:red;
+    font-weight: bold;
+}
+
+main{
+    margin:0 10em;
+}
+.card{
+    box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.4);
+    padding:2em;
+    margin-bottom: 1.5em;
+    border-radius: 1em;
+}
+.card h3, .card h5{
+margin-bottom:0.2em;
+}
+
+.buttons{
+    display: flex;
+    justify-content: center;
+    align-items:center;
+    margin-top:1em;
+}
+.buttons button{
+    padding:0.5em;
+    margin-left:2em;
+    border-radius: 1em;
+    border: none;
+}
+.buttons button:hover{
+    border: 1px dotted black;
+
+
+}
+.buttons a{
+    text-decoration:none;
+    color: black;
+}
+
+/* //for the add notes form */
+form label{
+    display: block;
+
+}
+form input{
+    display: block;
+    width: 70%;
+    margin-bottom:1em;
+    padding:0.5em;
+    border-radius: 1em;
+    border: none;
+    box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.4);
+}
+textarea{
+    display: block;
+    border-radius: 1em;
+    border: none;
+    box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.4);
+    margin-bottom: 1em;
+    padding:1em;
+}
+input[submit]:hover{
+    background-color: #69359C;
+}
+
+
+
+
+

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th ="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/formStyle.css">
+    <title>Add New Site</title>
+</head>
+<body>
+<h1>Add Item Site</h1>
+
+<form th:action="@{/admin/saveNewProduct}" method="post" th:object="${product}" enctype="multipart/form-data">
+
+    <label>Name:
+        <input type="text" name="name" th:field="*{name}">
+    </label>
+
+    <label>Description:
+        <input type="text" name="desc"  th:field="*{desc}">
+    </label>
+
+    <label>Price:
+        <input type="number" name="price"  th:field="*{price}">
+    </label>
+
+    <label>Quantity:
+        <input type="number" name="quantity"  th:field="*{quantity}">
+    </label>
+
+    <label>Category:
+        <input type="text" name="category"  th:field="*{category}">
+    </label>
+
+    <input type="submit">
+</form>
+</body>
+</html>

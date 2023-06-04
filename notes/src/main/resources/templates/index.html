@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/notes.css">
+    <title>Notes App</title>
+
+</head>
+<body>
+<header>
+    <h3>Notes App</h3>
+
+    <ul>
+<!--        Edit here-->
+        <li><a th:href="@{/}">All Notes</a></li>
+        <li><a th:href="@{/new-form}">Add Notes</a></li>
+    </ul>
+</header>
+
+<main>
+    <section class="card">
+        <h3>Notes Title</h3>
+        <h5>Notes author</h5>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Impedit minima error maiores laborum quo totam accusantium quia debitis accusamus, voluptatibus voluptates facere assumenda quod illo magnam nesciunt est repellat ipsam. Lorem ipsum dolor, sit amet consectetur adipisicing elit. Iure quidem consequuntur inventore harum, corporis optio deleniti quod itaque voluptatum animi, saepe adipisci, ipsum officia expedita aliquid commodi accusamus reiciendis impedit! Lorem ipsum, dolor sit amet consectetur adipisicing elit. Explicabo ducimus quis harum itaque dolores velit incidunt sequi officia quae iure! Cupiditate voluptas asperiores placeat cumque officiis facere, amet totam ad.</p>
+
+        <section class="buttons">
+            <button><a href=""> <i class="fa fa-pencil" aria-hidden="true"></i> Edit</a></button>
+
+            <button><a href=""><i class="fa fa-trash" aria-hidden="true"></i> Delete</a></button>
+        </section>
+    </section>
+
+    <section class="card" th:each ="note : ${notes}">
+        <h3 th:text = "${note.title}"></h3>
+        <h5 th:text = "${note.author}"></h5>
+        <p th:text = "${note.noteText}"></p>
+        <section class="buttons">
+            <button><a th:href="@{/edit-form/{id} (id = ${note.id})}"> <i class="fa fa-pencil" aria-hidden="true"></i> Edit</a></button>
+
+            <button><a th:href="@{/delete/{id} (id = ${note.id})}"><i class="fa fa-trash" aria-hidden="true"></i> Delete</a></button>
+        </section>
+    </section>
+
+
+</main>
+
+
+<script src="notes.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,15 @@
+label{
+    display: block;
+}
+input{
+    display: block;
+    margin-bottom: 0.5 em;
+    width: 150%;
+}
+
+body{
+    display: flex;
+    flex-direction:column;
+    justify-content: center;
+    align-items: center;
+}
